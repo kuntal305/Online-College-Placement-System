@@ -1,0 +1,40 @@
+
+
+<link rel="stylesheet" type="text/css" href="/stylesheets/adminmessages/assets/css/style.css" />
+
+{{>adminprofilenavbar}}
+
+
+<div class="container-fluid">
+    <div class="container profile-container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="data-box" style="background-color: whitesmoke">
+                    
+                    {{#if status}}
+                        {{#if hasanymessages}}
+                            <h1 class="text-center" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Messages</h1>
+                            {{#each getsearcheddocumentfrommongodb}}
+                                <div class="col-md-12">
+                                    <div class="data-box">
+                                        <p class="lead text-dark-50"><b>FROM: </b>{{this.name}}</p>
+                                        <p class="lead text-dark-50"><b>EMAIL: </b>{{this.email}}</p>
+                                        <hr><br>&nbsp;&nbsp;&nbsp;&nbsp;<b class="lead text-dark-50"> Message: </b>
+                                        <p class="lead text-dark-50">&nbsp;{{this.message}}</p>
+                                    
+                                    </div>
+                                </div>
+                            {{/each}}
+                        {{else}}
+                            <h1 class="text-center" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">No Messages</h1>
+                        {{/if}}
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/stylesheets/adminmessages/assets/js/jquery-3.2.1.min.js"></script>
+<script src="/stylesheets/adminmessages/assets/js/popper.min.js"></script>
+  

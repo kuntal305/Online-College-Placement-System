@@ -1,0 +1,187 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://bootswatch.com/cosmo/bootstrap.min.css">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+
+    <div id="scoped-content">
+        <style type="text/css">
+            .mainbody {
+            background:rgba(0,0,0,0);
+            }
+            /* Special class on .container surrounding .navbar, used for positioning it into place. */
+            .navbar-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 20;
+            margin-left: -15px;
+            margin-right: -15px;
+            }
+            
+            /* Flip around the padding for proper display in narrow viewports */
+            .navbar-wrapper .container {
+            padding-left: 0;
+            padding-right: 0;
+            }
+            .navbar-wrapper .navbar {
+            padding-left: 15px;
+            padding-right: 15px;
+            }
+            
+            .navbar-content
+            {
+                width:32px;
+                padding: 15px;
+                padding-bottom:0px;
+            }
+            .navbar-content:before, .navbar-content:after
+            {
+                display: table;
+                content: "";
+                line-height: 0;
+            }
+            .navbar-nav.navbar-right:last-child {
+                margin-right: 15px !important;
+            }
+            .navbar-footer 
+            {
+                background-color:rgb(240, 234, 234);
+            }
+            .navbar-footer-content { padding:15px 15px 15px 15px; }
+            .dropdown-menu {
+            padding: 10px;
+            overflow: hidden;
+            }
+            
+            .brand_network {
+                color: rgb(154, 221, 241);
+                float: left;
+                position: absolute;
+                left: 70px;
+                top: 30px;
+                font-size: smaller;
+            }
+            
+            .post-content {
+                margin-left: 86px;
+            }
+            
+            .badge-important {
+                margin-top: 3px;
+                margin-left: 25px;
+                position: absolute;
+            }
+            .abc{
+                position: absolute;
+                top: 90px;
+                bottom: 20px;
+                left: 200px;
+                right: 200px;
+                
+                margin: auto;
+            }
+            
+            body {
+                background-color: #f4f9fa;
+            }
+        </style>
+
+        <div class="mainbody container-fluid">
+            <div class="row">
+                <div class="navbar-wrapper">
+                    <div class="container-fluid">
+                        <div class="navbar navbar-default navbar-static-top" role="navigation">
+                            <div class="container-fluid">
+                            
+                                <div class="navbar-collapse collapse">
+                                    <ul class="nav navbar-nav">
+                                        <li><a href="#">Home</a></li>
+                                        
+                                    </ul>
+                                    <!--Logout-->
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li class="dropdown"><a href="/" aria-disabled="true">
+                                            <span class="user-avatar pull-left" style="margin-right:8px; margin-top:-5px;">
+                                                <img src="https://img.icons8.com/nolan/20/000000/logout-rounded-up.png" class="img-responsive img-circle" alt="" width="25px" height="25px">
+                                            </span>
+                                            <span class="user-name">
+                                                Sign out
+                                            </span>
+                                        </a>
+                                        
+                                        </li>
+                                    </ul>
+                                    <!--User profile (name on left side of the navbar)-->
+                                    <ul class="nav navbar-nav navbar-right">
+                                        
+                                        <li class="dropdown"><a href="" class="dropdown-toggle " data-toggle="dropdown" >
+                                            
+                                            <span class="user-avatar pull-left" style="margin-right:8px; margin-top:-5px;">
+                                                <img src="https://img.icons8.com/material/30/000000/user-male-circle.png" class="img-responsive img-circle" alt="" width="30px" height="30px">
+                                            </span>
+                                            <span class="user-name">
+                                                {{#each detail}}
+                                                    {{this.firstname}}
+                                                {{/each}}
+                                            </span>
+                                            <b class=""></b></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding-top:50px;"> </div>
+                <div class="abc">          
+                    {{#each messages}}
+                    <!-- Simple post content example. -->
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="pull-left">
+                                <a href="#">
+                                    <img class="media-object img-circle" src="/images/blank-profile-picture-973460_960_720.png" width="50px" height="50px" style="margin-right:8px; margin-top:-5px;">
+                                </a>
+                            </div>
+                            <h4><a href="#" style="text-decoration:none;"><strong>{{this.companyname}}</strong></a> – <small><small><a href="#" style="text-decoration:none; color:grey;"><i><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;{{this.date}}</i></a></small></small></h4>
+                        
+                            <hr>
+                            <div class="post-content">
+                                <p>JOB DESCRIPTION: {{this.job}}</p>
+                                <p>PACKAGE: {{this.package}}</p>
+                                <p>PLACE OF WORK: {{this.place}}</p>
+                                <p>CRITERIA: </p>
+                                <ul>
+                                    <li>10<sup>TH</sup>&nbsp;PERCENTAGE: {{this.criteria1}}</li>
+                                    <li>12<sup>TH</sup>&nbsp;PECENTAGE: {{this.criteria2}}</li>
+                                    <li>GRADUATION CGPA: {{this.criteria3}}</li>
+                                </ul>
+                            </div>
+                            <hr>
+                            <div>
+                                <div class="pull-right btn-group-xs">
+                                    
+                                        <button class="btn btn-success btn-block form-control" onclick="apply()">Apply</button>
+                                    
+                                </div>   <br>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    {{/each}}
+                    
+                </div>
+            
+            </div>
+        </div>
+    </div>
+
+<script>
+    function apply(){
+        alert("You Have Successfully Applied for The Job Offer! The TPO will contact you shortly");
+    }
+</script>

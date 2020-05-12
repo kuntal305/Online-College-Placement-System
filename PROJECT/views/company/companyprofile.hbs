@@ -1,0 +1,175 @@
+<!-- LINEARICONS -->
+		<link rel="stylesheet" href="/stylesheets/companyprofile/fonts/linearicons/style.css">
+
+<!-- STYLE CSS -->
+		<link rel="stylesheet" href="/stylesheets/companyprofile/css/style.css">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+	body {font-family: Arial, Helvetica, sans-serif;}
+	
+	.navbar {
+		width: 100%;
+		background-color: rgb(84, 94, 104);
+		overflow: auto;
+	
+	}
+	
+	.navbar a {
+		float: left;
+		padding: 12px;
+		color: white;
+		text-decoration: none;
+		font-size: 17px;
+	}
+	
+	.navbar a:hover {
+		background-color: rgb(109, 170, 211);
+	}
+	
+	.active {
+		background-color: rgb(5, 12, 5);
+	}
+	
+	@media screen and (max-width: 500px) {
+		.navbar a {
+		float: none;
+		display: block;
+		}
+	}
+</style>
+
+<div class="navbar"> 
+		
+	<a href="/company/companyprofile"><i class="fa fa-fw fa-calendar-o"></i> Select Date</a> 
+	<a href="/company/adminmessages"><i class="fa fa-fw fa-envelope"></i>Admin Message </a> 
+
+	<a href="/" style="float:right"><i class="fa fa-fw fa-sign-out"></i> Logout</a>
+</div>			
+
+<div class="wrapper">
+    <!--div class="inner">
+        <!--Application Dashboard>
+        <form action="">
+            <h3>Applications</h3>
+            <hr>
+            <div class="form-holder">
+                <p class="lead">Student Name: </p><br>
+                <p class="lead">Job Description</p>
+            </div>
+            <hr>
+            <div class="form-holder">
+                <p class="lead">Student Name:</p><br>
+                <p class="lead">Job Description</p>							
+            </div>
+            <hr>
+            <div class="form-holder">
+                <p class="lead">Student Name:</p><br>
+                <p class="lead">Job Description</p>							
+            </div>
+            <hr>
+            <div class="form-holder">
+                <p class="lead">Student Name:</p><br>
+                <p class="lead">Job Description</p>							
+            </div>
+            <hr>
+        </form>				
+    </div-->
+
+    <!--Date Selection-->
+    <div class="inner">				
+            <form action="/company/select" method="POST">
+                <h3>Select Date  </h3>
+                
+                   
+                <div class="form-holder">
+                    <span class="lnr lnr-user"></span>
+                    <input type="text" class="form-control" id="hrname" name="hrname" placeholder="HR Name">
+                </div>
+                <div class="form-holder">
+                    <span class="lnr lnr-calendar-full"></span>
+                    <input type="date" class="form-control" id="date" name="date" placeholder="">
+                </div>
+                <div class="form-holder">
+                    <span class="lnr lnr-file-empty"></span>
+                    <input type="text" class="form-control" id="job" name="job" placeholder="Job Description">
+                </div>
+                <div class="form-holder">
+                    <span class="lnr lnr-license"></span>
+                    <input type="text" class="form-control" id="jobid" name="jobid" placeholder="Job ID">
+                </div>
+                <div class="form-holder">
+                    <span class="lnr lnr-briefcase"></span>
+                    <input type="text" class="form-control" id="package" name="package" placeholder="Package">
+                </div>
+                <div class="form-holder">
+                    <span class="lnr lnr-map-marker"></span>
+                    <input type="text" class="form-control" id="place" name="place" placeholder="Place">
+                </div><br><br>
+                <h4>Criteria</h4>
+                <div class="form-holder">
+                    <span class="lnr lnr-book"></span>
+                    <input type="text" class="form-control" id="criteria1" name="criteria1" placeholder="10th percentage">
+                </div>
+                <div class="form-holder">
+                    <span class="lnr lnr-book"></span>
+                    <input type="text" class="form-control" id="creiteria2" name="criteria2" placeholder="10+2 percentage">
+                </div>
+                <div class="form-holder">
+                    <span class="lnr lnr-graduation-hat"></span>
+                    <input type="text" class="form-control" id="criteria3" name="criteria3" placeholder="Graduation CGPA">
+                </div>		
+                {{#each test1}}
+                    <input type="hidden" id="comname" name="comname"   value="{{this.companyname}}">
+                    
+                    {{/each}}
+                <input type="hidden" name="comemail" id="comemail" value={{this.test}}>					
+                <button class="btn btn-success btn-block" type="submit">Submit</button>	
+                
+              <!--  {{#if this.selected}}
+                    <div class="form-holder">
+                        <div class="alert alert-success text-center">Your Date has been submitted please wait for admin authorization</div>
+                    </div>
+                {{/if}} -->
+                
+            </form>				
+    </div>
+
+    <!--Admin Message-->
+    <!--div class="inner">
+        
+            <form action="">
+                <h3>Admin Message</h3>
+                <div class="form-holder">
+                    <hr>
+                    <br><br>{{this.message}}<br><br><br>
+                    <hr>
+                </div>
+                <!--div class="form-holder">
+                        
+                </div>
+                <div class="form-holder">
+                        
+                </div>
+                <div class="form-holder">
+                    
+                </div>
+                <div class="form-holder">
+                            
+                </div>	
+                <a href="#">
+                <button class="btn btn-success btn-block">Contact Admin</button></a>								 
+            </form>		
+    </div-->
+
+
+</div>
+
+
+
+
+<script src="/stylesheets/companyprofile/js/jquery-3.3.1.min.js"></script>
+<script src="/stylesheets/companyprofile/js/main.js"></script>
+

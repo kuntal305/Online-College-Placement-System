@@ -1,0 +1,91 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<link rel="stylesheet" href="/stylesheets/adminprofile/searchbar.css">
+
+{{>adminprofilenavbar}}
+
+    <div class="container text-center">
+        <h1 class="mt-5 text-white font-weight-light">Search Users</h1>
+    </div>
+    <br>
+    <div class="container h-100">
+        <div class="d-flex justify-content-center h-100">
+            <form action="/admin/searchstudent" method="POST">
+                <div class="searchbar">
+                    <input class="search_input" type="text" name="name" id="name" placeholder="Search By firstname">
+                    <a class="search_icon"><button class="btn btn-icon" type="submit"><i class="fas fa-search"></i></button></a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br><br>
+    {{#if status}}
+        {{#if hasAnyUser}}
+            <h2 style="text-align: center;color:whitesmoke"> USER Details</h2>
+    
+            <table class="table table-hover table-striped table-responsive">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>NAME</th>
+                        <th>DOB</th>
+                        <th>GENDER</th>
+                        <th>STREAM</th>
+                        <th>EMAIL</th>
+                        <th>MOBILENO</th>
+                        <th>SECONDARY SCHOOL email</th>
+                        <th>10th PASSING YEAR</th>
+                        <th>10th BOARD</th>
+                        <th>10th MARKS</th>
+                        <th>HIGH SECONDARY SCHOOL</th>
+                        <th>12th PASSING YEAR</th>
+                        <th>12th BOARD</th>
+                        <th>12th MARKS</th>
+                        <th>UNIVERSITY</th>
+                        <th>SEM 1</th>
+                        <th>SEM 2</th>
+                        <th>SEM 3</th>
+                        <th>SEM 4</th>
+                        <th>SEM 5</th>
+                        <th>SEM 6</th>
+                        <th>SEM 7</th>
+                        <th>SEM 8</th>
+                                        
+                    </tr>
+                </thead>
+                {{#each getsearcheddocumentfrommongodb}}
+                <tr>
+                    <td>{{ this.firstname }} {{this.lastname}}</td>
+                    <td>{{ this.dob }}</td>
+                    <td>{{this.gender}}</td>
+                    <td>{{this.stream}}</td>
+                    <td>{{this.email}}</td>
+                    <td>{{ this.mobileno }}</td>
+                    <td>{{this.schoolemail1}}</td>
+                    <td>{{this.passingyear1}}</td>
+                    <td>{{ this.board1}}</td>
+                    <td>{{ this.marks1 }}</td>
+                    <td>{{ this.schoolemail2 }}</td>
+                    <td>{{ this.passingyear2 }}</td>
+                    <td>{{ this.board2}}</td>
+                    <td>{{ this.marks2 }}</td>
+                    <td>{{ this.university}}</td>
+                    <td>{{ this.sem1}}</td>
+                    <td>{{ this.sem2}}</td>
+                    <td>{{ this.sem3}}</td>
+                    <td>{{ this.sem4}}</td>
+                    <td>{{ this.sem5}}</td>
+                    <td>{{ this.sem6}}</td>
+                    <td>{{ this.sem7}}</td>
+                    <td>{{ this.sem8}}</td>
+                        
+                </tr>
+                {{/each}}
+            </table>
+            {{else}}
+            <h1 style="text-align: center;color: red"> NO USER FOUND </h1>
+        {{/if}}
+    {{/if}}
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

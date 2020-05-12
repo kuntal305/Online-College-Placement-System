@@ -1,0 +1,144 @@
+    <link rel="stylesheet" href="/stylesheets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/font-awesome/css/all.css">
+    <link rel="stylesheet" href="/stylesheets/fixed.css">
+    <link rel="stylesheet" href="/stylesheets/homestyle.css">
+<!--Start Home section-->
+
+    <div id="home">
+    <!--Navbar-->
+        {{>homenavbar}}
+    <!--End Navbar-->
+    <!--Video Background-->
+        <div class="video-background">
+            <div class="video-wrap">
+                <div id="video">
+                    <video id="bgvid" autoplay loop muted plays inline>
+                        <source src="./images/stars.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+        <div class="caption text-center">
+            <h1 class="display-4">Welcome</h1>
+            <hr>
+            <p class="lead">GNITIANS and HR Reps to the place where placement management becomes easy. </p>
+        </div>
+    </div>
+<!--End Home Section-->
+
+<!--Start About Section-->
+    <div id="about" class="offset">
+
+        <div class="container padding">
+            <div class="row welcome text-center">
+                <div class="col-12">
+                    <h1 class="display-4">About Us</h1>
+                </div>
+                <hr>
+                <div class="col-12">
+                    <p class="lead">Guru Nanak Institute of Technology was instituted with a vision to empower the aspiring professionals with the technological knowledge and professional expertise under the aegis of JIS Group Educational Initiatives in the year 2003. This technical campus offers undergraduate and post graduate courses under West Bengal University of Technology (WBUT now MAKAUT) and some courses are NBA Accredited. The Institute is approved by AICTE and accredited by UGC, NAAC and located in one of the prime locations in North Kolkata near Sodepur. The Institute offers latest technology oriented courses as per industry trends and nurtures creativity, innovations and research initiatives both at faculty and student levels to enrich and enhance the teaching learning process. This approach equips the students to keep pace with the dynamic evolution and changing demands of science and technology both in academics and industry. The trend-setting academic endeavors of GNIT have produced some of the finest scholars and ace industry professionals. The college alumni are working creditably ell and have brought fame and laurels for both the institute and themselves. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--End About Section-->
+
+<!--Start Register Section-->
+    <div id="register" class="offset">
+        <div class="jumbotron">
+            <div class="text-center">
+                <div class="col-12">
+                    <h3 class="heading">Register</h3>
+                    <div class="heading-underline"></div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-6">
+                        <div class="feature">
+                            
+                                <button class="btn btn-icon" type="submit"><a href="/student/reg" style="color:black"><i class="fas fa-user-plus fa-4x" data-fa-transform="shirnk-3 up-5"></i></a></button>
+                            
+                            <h3>Student Registration</h3>
+                            <p>Register as a Student and get notices and get notified of different placement oppurtunities and apply for them</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="feature">
+                            
+                            <button class="btn btn-icon1"><a href="/company/reg" style="color: lightseagreen"><i class="fas fa-user-plus fa-4x" data-fa-transform="grow-6 up-5"></i></a></button>
+                            <h3>Company Registration</h3>
+                            <p>Register as a Company for organising placement programmes </p>
+                        </div>
+                    </div>
+                </div> <!--End row-->
+            </div> <!--End narrow-->
+        </div> <!--End jumbotron-->
+    </div>
+<!--End Register Section-->
+
+<!--Start Login Section-->
+
+    <div id="login" class="offset">
+        <div class="jumbotron">
+            <div class="text-center">
+                <div class="col-12">
+                    <h3 class="heading">Login</h3>
+                    <div class="heading-underline"></div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <div class="feature">
+                            
+                            <button class="btn btn-icon" type="submit"><a href="/student/login" style="color: black"><i class="fas fa-sign-in-alt fa-4x" data-fa-transform="shirnk-3 up-5"></i></a></button>
+                            
+                            <h3>Student Login</h3>
+                            <p>Login As a student and view your profile</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature">
+                            <button class="btn btn-icon1"><a href="/company/login" style="color: lightseagreen"><i class="fas fa-sign-in-alt fa-4x" data-fa-transform="grow-6 up-5"></i></a></button>
+                            <h3>Company Login</h3>
+                            <p>Login as Company and get access to the different features</p>
+                        </div>
+                    </div>
+                   <div class="col-md-4">
+                        <div class="feature">
+                            
+                                <button class="btn btn-icon1"><a href="/admin/adminlogin"><img src="https://img.icons8.com/ios-filled/60/000000/microsoft-admin.png"></a></button>
+                            </form>
+                            <h3>Admin Login</h3>
+                            <p>Login as the Admin</p>
+                        </div>
+                    </div> 
+                </div> <!--End row-->
+            </div> <!--End narrow-->
+        </div> <!--End jumbotron-->
+    </div>
+
+<!--End Login Section-->
+
+<!--Start Connect Section-->
+    <div id="connect" class="offset">
+        <br><br><br><br>
+        <div class="container-fluid padding">
+            <div class="row text-center padding">
+                <div class="col-12">
+                    <h2>Connect</h2>
+                </div>
+                <div class="col-12 social padding">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{{>footer}}
+<script src="/javascripts/jquery.min.js"></script>
+    <script src="/javascripts/popper.min.js"></script>
+    <script src="/stylesheets/bootstrap/js/bootstrap.min.js"></script>
+
+<!--End Connect Section-->

@@ -1,0 +1,97 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/adminmessages/assets/css/style.css" />
+
+{{>adminprofilenavbar}}
+
+<div class="container text-center" style="margin-top: -20px">
+  <h1 class="mt-5 text-white font-weight-light"></h1>
+  <p class="lead text-white-50" style="font-size: 50px">Notifications</p>
+</div>
+
+<div class="container-fluid">
+    <div class="container profile-container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="data-box" style="background-color: whitesmoke">
+
+                    
+                    {{#if hasnotifications}}
+                        
+                        <div class="col-md-12">
+                            
+                            {{#each getsearcheddocument}}
+                            <!--{{#unless approve}}
+                                {{#unless reject}}-->
+                                <div class="row">
+                                    <div class="data-box col-md-8">
+                                        
+                                        <p class="lead text-dark-50"><b>Company Name: </b>{{this.companyname}}</p>
+                                        <p class="lead text-dark-50"><b>HR Name: </b>{{this.hrname}}</p>
+                                        <p class="lead text-dark-50"><b>Date Selected: </b>{{this.date}}</p>
+                                        
+                                    
+                                                    
+                                                    
+                                    </div>
+                                    
+                                    <div class="data-box col-md-4">
+                                        
+                                            <div class="container text-center">
+                                                <form action="/admin/checkdate" method="POST">        
+                                                    <input type="hidden" name="date" id="date" value={{this.date}}>
+                                                    <button class="btn btn-primary" type="submit" style="margin-bottom: 10px">Check Date Availability</button>
+                                                </form>
+                                                
+                                                <form action="/admin/approve" method="POST">
+                                                    
+                                                    <input type="hidden" name="approve" id="approve" value={{this.jobid}}>
+                                                    <button class="btn btn-info" type="submit" style="margin-bottom: 10px">Approve</button>
+                                                    
+                                                    
+                                                    
+
+                                                </form>
+                                                
+                                                <form action="/admin/reject" method="POST">
+                                                    <input type="hidden" name="reject" id="reject" value={{this.jobid}}>
+                                                    <button class="btn btn-danger" type="submit">Reject</button>
+                                                </form>
+                                            </div>
+                                            
+                                        
+                                    </div>
+                                    
+                                </div>
+                                <!--{{/unless}}
+                            {{/unless}}-->
+                            
+                            {{/each}}
+                            
+                                {{#if datenotavailable}}
+                                    <div class="alert alert-danger text-center">Date Unavailable</div>
+
+                                {{/if}}
+                                {{#if dateavailable}}
+                                    <div class="alert alert-success text-center">Date available</div>
+                                {{/if}}
+                                
+                            
+                            
+                        </div>
+                        
+                        
+                    {{else}}
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="data-box col-md-12">
+                                    <p  class="lead text-dark-50" style="font-size: 25px;text-align:center">No New Notifications</p>
+                                </div>
+                            </div>
+                        </div>
+                    {{/if}} 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

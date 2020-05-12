@@ -1,0 +1,298 @@
+
+
+<!-- Icons font CSS-->
+    <link href="/stylesheets/studentreg/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="/stylesheets/studentreg/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="/stylesheets/studentreg/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="/stylesheets/studentreg/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="/stylesheets/studentreg/css/main.css" rel="stylesheet" media="all">
+
+    <!--Vatidation-->
+    <script src="/javascripts/studentreg/validation.js"></script>
+
+
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h1 class="title" style="text-align: center;font-size: 35px"><b>Student Registration</b></h1>
+                    <hr class="light"><br>
+                    <form action="/student/registerdb" method="POST">
+                        
+                        <!--Personal Details-->
+                        <label class="label" style="font-style: oblique; text-align: center;font-size:20px"><b>PERSONAL DETAILS</b></label>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">first name</label>
+                                    <input class="input--style-4" type="text" id="firstname" name="firstname" minlength="3" maxlength="10" onblur="checkfname()" onfocus="clearfname()">
+                                    <div id="fnameerrormsg" style="color: red"></div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">last name</label>
+                                    <input class="input--style-4" type="text" id="lastname" name="lastname" minlength="3" maxlength="20" onblur="checklname()" onfocus="clearlname()">
+                                    <div id="lnameerrormsg" style="color: red"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Date of Birth</label>
+                                    <div class="input-group-icon">
+                                        <input class="input--style-4 js-datepicker" type="text" id="dob" name="dob">
+                                        <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Gender</label>
+                                    <div class="p-t-10">
+                                        <label class="radio-container m-r-45">Male
+                                            <input type="radio"  name="gender" value="Male">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-container">Female
+                                            <input type="radio" name="gender" value="Female">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label class="label">Stream</label>
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="stream" id="stream">
+                                    <option disabled="disabled" selected="selected">Choose option</option>
+                                    <option>CSE</option>
+                                    <option>IT</option>
+                                    <option>EE</option>
+                                    <option>ECE</option>
+                                    <option>FT</option>
+                                    <option>AEIE</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label for="email" class="label">Email</label>
+                                    <input class="input--style-4" type="email" name="email" id="email" onblur="checkemail()" onfocus="clearemail()">
+                                    <div id="emailerrormsg" style="color:red"></div>
+                                </div>
+                                
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Phone Number</label>
+                                    <input class="input--style-4" type="text" name="mobileno" id="mobileno" onblur="mobnocheck()" onfocus="mobnomsgclear()">
+                                    <div id="mobnoerrormsg" style="color:red"></div>
+                                </div>
+                            </div>
+                        </div>  
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Password</label>
+                                    <input class="input--style-4" type="password" name="password" id="password" onblur="pwdcheck()" onfocus="pwdclear()">
+                                    <div id="pwderrormsg" style="color: red"></div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Confirm Password</label>
+                                    <input class="input--style-4" type="password" name="cpassword" id="cpassword" onblur="conpwdcheck()" onfocus="conpwdmsgclr()">
+                                    <div id="cpwdmsg" style="color: red"></div>
+                                </div>
+                            </div>
+                        </div>                       
+                        <br>
+                        <hr class="light">
+                        <br>
+                        <!--eDUCATIONAL dETAILS-->
+                        <label class="label" style="font-style: oblique; text-align: center;font-size:20px"><b>EDUCATIONAL DETAILS </b></label>
+                        <br>
+                        <!--Secondary School Details-->
+                        <label class="label" style="font-style: oblique; text-align: center"><b>Secondary School</b></label>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">School Name</label>
+                                    <input class="input--style-4" type="text" name="schoolname1" id="schoolname1" placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Passing Year</label>
+                                    <input class="input--style-4" type="text" name="passingyear1" id="passingyear1" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <label class="label">Board</label>
+                                        <input class="input--style-4" type="text" name="board1" id="board1" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <label class="label">Marks(%)</label>
+                                        <input class="input--style-4" type="text" name="marks1" id="marks1" placeholder="">
+                                    </div>
+                                </div>
+                        </div>
+                        <br>
+                        <!--Higher Secondary School Details-->
+                        <label class="label" style="font-style: oblique; text-align: center"><b>Higher Secondary School</b></label>                         
+                        <div class="row row-space">
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <label class="label">School Name</label>
+                                        <input class="input--style-4" type="text" name="schoolname2" id="schoolname2" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <label class="label">Passing Year</label>
+                                        <input class="input--style-4" type="text" name="passingyear2" id="passingyear2" placeholder="">
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <label class="label">Board</label>
+                                            <input class="input--style-4" type="text" name="board2" id="board2" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <label class="label">Marks(%)</label>
+                                            <input class="input--style-4" type="text" name="marks2" id="marks2" placeholder="">
+                                        </div>
+                                    </div>
+                        </div>
+                        <br>
+                        <!--Graduation Details-->
+                        <label class="label" style="font-style: oblique; text-align: center"><b>Graduation</b></label>
+                        <div class="row row-space">
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <label class="label">University Name</label>
+                                        <input class="input--style-4" type="text" name="university" id="university" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <label class="label">Passing Year</label>
+                                        <input class="input--style-4" type="text" name="passingyear3" id="passingyear3" placeholder="">
+                                    </div>
+                                </div>
+                        </div>
+                        <!--SGPA-->
+                        <label class="label" style="font-style: oblique; text-align: center"><b>SGPA</b></label> 
+                        <div class="row row-space">
+                                 <div class="col-3">
+                                    <div class="input-group">
+                                        <label class="label">1st Sem</label>
+                                        <input class="input--style-4" type="text" name="sem1" id="sem1" placeholder="">
+                                    </div>
+                                    </div>
+                                    <div class="col-3">
+                                    <div class="input-group">
+                                        <label class="label">2nd Sem</label>
+                                        <input class="input--style-4" type="text" name="sem2" id="sem2" placeholder="">
+                                    </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="input-group">
+                                            <label class="label">3rd Sem</label>
+                                            <input class="input--style-4" type="text" name="sem3" id="sem3" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="input-group">
+                                            <label class="label">4th Sem</label>
+                                            <input class="input--style-4" type="text" name="sem4" id="sem4" placeholder="">
+                                        </div>
+                                    </div>
+                        </div>
+                        <div class="row row-space">
+                                <div class="col-3">
+                                   <div class="input-group">
+                                       <label class="label">5th Sem</label>
+                                       <input class="input--style-4" type="text" name="sem5" id="sem5" placeholder="">
+                                   </div>
+                                   </div>
+                                   <div class="col-3">
+                                   <div class="input-group">
+                                       <label class="label">6th Sem</label>
+                                       <input class="input--style-4" type="text" name="sem6" id="sem6" placeholder="">
+                                   </div>
+                                   </div>
+                                   <div class="col-3">
+                                       <div class="input-group">
+                                           <label class="label">7th Sem</label>
+                                           <input class="input--style-4" type="text" name="sem7" id="sem7" placeholder="">
+                                       </div>
+                                   </div>
+                                   <div class="col-3">
+                                       <div class="input-group">
+                                           <label class="label">8th Sem</label>
+                                           <input class="input--style-4" type="text" name="sem8" id="sem8" placeholder="">
+                                       </div>
+                                   </div>
+                       </div>
+					   <hr>
+                       <p style="margin-top: 25px;font-size: 10pt;float:right">
+                        <a href="/student/login" style="color:rgb(102, 15, 59);text-decoration:none" id="login">Login in as registered user</a></p>   
+                        <div class="p-t-15">
+                            <button class="btn btn--radius-2 btn--green" type="submit" id="submit" name="submit" disabled="disabled">Submit</button>
+							
+                        </div>
+                    </form>
+					
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="/stylesheets/studentreg/vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="/stylesheets/studentreg/vendor/select2/select2.min.js"></script>
+    <script src="/stylesheets/studentreg/vendor/datepicker/moment.min.js"></script>
+    <script src="/stylesheets/studentreg/vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="/stylesheets/studentreg/js/global.js"></script>
+    <script>
+        $('#firstname, #lastname, #password, #email, #cpassword, #gender, #stream, #dob, #mobileno, #schoolname1, #board1, #passingyear1, #marks1, #schoolname2, #board2, #passingyear2, #marks2, #university, #passingyear3, #sem1, #sem2, #sem3, #sem4, #sem5, #sem6, #sem7, #sem8').bind('keyup', function() {
+        if(allFilled()) $('#submit').removeAttr('disabled');
+        });
+
+        function allFilled() {
+            var filled = true;
+            $('body input').each(function() {
+            if($(this).val() == '') filled = false;
+            });
+            return filled;
+            
+        }
+        
+       
+    </script>
+
+

@@ -1,0 +1,152 @@
+
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="/stylesheets/companylogin/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/stylesheets/companylogin/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/stylesheets/companylogin/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/stylesheets/companylogin/fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/stylesheets/companylogin/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/stylesheets/companylogin/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/stylesheets/companylogin/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/stylesheets/companylogin/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/stylesheets/companylogin/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/stylesheets/companylogin/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/companylogin/css/main.css">
+<!--===============================================================================================-->
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.5/css/mdb.min.css" rel="stylesheet">
+
+
+
+
+
+
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('/stylesheets/companylogin/images/bg-01.jpg');">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+				<form class="login100-form validate-form" action="/company/logincheck" method="POST">
+					<span class="login100-form-title p-b-49">
+						Company Login
+					</span>
+					{{#if this.hascompanyregistered}}
+						<div class="text-center">
+							<div class="alert alert-success"><p style="text-align: center">
+  								<strong>Thank You For Registering!</strong> Please Login To Continue To Your Profile
+							</div>
+						</div>
+					{{/if}}
+					{{#if this.hasnotloggedin}}
+                        <div class="text-center">
+							<div class="alert alert-danger"><p style="text-align: center">
+  								<strong>Wrong email or password!</strong> Please Enter Correct Email ID and Password
+							</div>
+						</div>
+                    {{/if}}
+
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is required">
+						<span class="label-input100">HR Email ID </span>
+						<input class="input100" type="email" name="email" id="email" placeholder="Type your email" onfocus="msgclear()" onblur="emailcheck()">
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
+					<div class="text-danger" id="emailmsg"></div>
+					
+					
+
+
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<span class="label-input100">Password</span>
+						<input class="input100" type="password" name="pass" id="pass" placeholder="Type your password" onfocus="pwdclear()" onblur="pwdcheck()">
+						<span class="focus-input100" data-symbol="&#xf190;"></span>
+					</div>
+					<div class="text-danger" id="pwdmsg"></div>
+
+					</br>
+					<!-- Default checked -->
+						<div class="custom-control custom-checkbox"><p style="float: right">
+							<input type="checkbox" class="custom-control-input" id="defaultUnChecked2" name="check1" onclick="passwordvisible()">
+							<label class="custom-control-label" for="defaultUnChecked2">Show Password</label></p>
+  					</div>
+
+
+						<br>
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn">
+								Login
+							</button>
+						</div>
+					</div>
+					<!--{{#if this.hasnotloggedin}}>
+                         <div class="container-fluid" style="margin-top: 20px">
+							 <div class="alert alert-danger alert-dismissible fade in">
+    							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    							<strong>Wrong Email And/Or Password! </strong>Please Enter The Correct Email And Password
+  							</div>
+						 </div>
+                    < {{/if}} -->
+					<br><br>
+					<div class="text-center p-t-8 p-b-31">
+						<a href="#">
+							Forgot password?
+						</a>
+					</div>
+
+
+					<div class="text-center p-t-80">
+						<a class="txt2" href="/company/reg">
+							Create your Account→
+
+						</a>
+					</div>
+
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	<script src="/stylesheets/companylogin/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/stylesheets/companylogin/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/stylesheets/companylogin/vendor/bootstrap/js/popper.js"></script>
+	<script src="/stylesheets/companylogin/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/stylesheets/companylogin/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/stylesheets/companylogin/vendor/daterangepicker/moment.min.js"></script>
+	<script src="/stylesheets/companylogin/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="/stylesheets/companylogin/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="/stylesheets/companylogin/js/main.js"></script>
+	<script src="/javascripts/companylogin/validation.js"></script>
+
+	<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.5/js/mdb.min.js"></script>
+
+

@@ -1,0 +1,135 @@
+
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="/stylesheets/studentlogin/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/stylesheets/studentlogin/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/stylesheets/studentlogin/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/stylesheets/studentlogin/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="/stylesheets/studentlogin/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/stylesheets/studentlogin/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/stylesheets/studentlogin/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/studentlogin/css/main.css">
+<!--===============================================================================================-->
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.5/css/mdb.min.css" rel="stylesheet">
+
+
+
+
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="/stylesheets/studentlogin/images/img-01.png" alt="IMG">
+				</div>
+
+				<form class="login100-form validate-form" action="/student/checkstudentlogin" method="POST">
+					<span class="login100-form-title">
+						Student Login
+					</span>
+
+					{{#if this.hasstudentregistered}}
+						<div class="text-center">
+							<div class="alert alert-success"><p style="text-align: center">
+  								<strong>Thank You For Registering!</strong> Please Login To Continue To Your Profile
+							</div>
+						</div>
+					{{/if}}
+					{{#if this.hasnotloggedin}}
+                        <div class="text-center">
+							<div class="alert alert-danger"><p style="text-align: center">
+  								<strong>Wrong email or password!</strong> Please Enter Correct Email ID and Password
+							</div>
+						</div>
+                    {{/if}}
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="email" name="email"
+						id="email" placeholder="Email" onfocus="msgclear()" onblur="emailcheck()">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input class="input100" type="password" name="pass" id="pass" placeholder="Password" onblur="pwdcheck()" onfocus="pwdclear()">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+							</span>
+						</div>
+						
+						
+						<!-- Default checked -->
+						<div class="custom-control custom-checkbox"><p style="float: right">
+							<input type="checkbox" class="custom-control-input" id="defaultUnChecked2" name="check1" onclick="passwordvisible()">
+							<label class="custom-control-label" for="defaultUnChecked2">Show Password</label></p>
+  						</div>
+						
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Login
+						</button>
+					</div>
+
+					<div class="text-center p-t-12">
+						<span class="txt1">
+							Forgot
+						</span>
+						<a class="txt2" href="#">
+							Username / Password?
+						</a>
+					</div>
+
+					<div class="text-center p-t-136">
+						<a class="txt2" href="/student/reg">
+							Create your Account →
+							
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	
+<!--===============================================================================================-->	
+	<script src="/stylesheets/studentlogin/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/stylesheets/studentlogin/vendor/bootstrap/js/popper.js"></script>
+	<script src="/stylesheets/studentlogin/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/stylesheets/studentlogin/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/stylesheets/studentlogin/vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+    
+
+<!--===============================================================================================-->
+	<script src="/stylesheets/studentlogin/js/main.js"></script>
+	<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.5/js/mdb.min.js"></script>
+<!-------Validation-------->
+<script type="text/javascript" src="/javascripts/studentlogin/validation.js"></script>
